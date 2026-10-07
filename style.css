@@ -3108,7 +3108,65 @@ button:focus-visible {
     outline-offset: 4px;
 }
 
+/* =========================================================
+   DESKTOP CLICK / LAYER FIX
+   ========================================================= */
 
+@media (min-width: 769px) {
+
+    main {
+        position: relative;
+        z-index: 10;
+    }
+
+    main section {
+        position: relative;
+        z-index: 10;
+    }
+
+    .background-effects {
+        z-index: 0;
+        pointer-events: none;
+    }
+
+    .gradient-orb,
+    .grid-overlay {
+        pointer-events: none;
+    }
+
+    .hero-visual,
+    .profile-glow,
+    .visual-orbit,
+    .orbit-dot,
+    .floating-card {
+        pointer-events: none;
+    }
+
+    .hero-content,
+    .hero-buttons,
+    .hero-socials,
+    .hero-stats,
+    .section-heading,
+    .about-grid,
+    .timeline,
+    .expertise-grid,
+    .skills-layout,
+    .education-panel,
+    .contact-card {
+        position: relative;
+        z-index: 20;
+    }
+
+    .nav-link,
+    .nav-cta,
+    .button,
+    .contact-email,
+    .social-link {
+        position: relative;
+        z-index: 100;
+        pointer-events: auto;
+    }
+}
 /* =========================================================
    END OF STYLESHEET
 ========================================================= */
