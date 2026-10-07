@@ -4,54 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Aneeb Raza | Educator • Principal • Technology Professional</title>
+<title>Aneeb Raza | Educator & Technology Professional</title>
 
-<meta
-  name="description"
-  content="Aneeb Raza — Educator, Principal, Computer Science Professional and Technology Enthusiast."
->
-<meta name="author" content="Aneeb Raza">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link
-  href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
-  rel="stylesheet"
->
+<meta name="description" content="Aneeb Raza — Principal, Computer Science Educator and Technology Professional.">
 
 <style>
-
-/* =========================================================
-   ROOT
-========================================================= */
-
-:root {
-    --bg: #050b16;
-    --bg-2: #081426;
-    --surface: #0b1729;
-    --surface-2: #0e1d32;
-
-    --white: #ffffff;
-    --text: #eaf2ff;
-    --muted: #91a4bd;
-
-    --blue: #2388ff;
-    --cyan: #38c8ff;
-    --purple: #7c5cff;
-    --green: #4ee6a8;
-
-    --border: rgba(255,255,255,.08);
-
-    --shadow: 0 25px 80px rgba(0,0,0,.35);
-
-    --radius: 24px;
-}
-
-
-/* =========================================================
-   RESET
-========================================================= */
-
 * {
     margin: 0;
     padding: 0;
@@ -60,1241 +17,826 @@
 
 html {
     scroll-behavior: smooth;
-    scroll-padding-top: 110px;
 }
 
 body {
-    font-family: "Inter", sans-serif;
-    background: var(--bg);
-    color: var(--text);
-    overflow-x: hidden;
-}
-
-body.loading {
-    overflow: hidden;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #07111f;
+    color: #ffffff;
+    line-height: 1.6;
 }
 
 a {
-    text-decoration: none;
     color: inherit;
+    text-decoration: none;
 }
 
-button,
-a {
-    -webkit-tap-highlight-color: transparent;
-}
+/* NAVBAR */
 
-button {
-    font-family: inherit;
-}
-
-::selection {
-    background: var(--cyan);
-    color: #00111d;
-}
-
-
-/* =========================================================
-   BACKGROUND
-========================================================= */
-
-.ambient {
+nav {
     position: fixed;
-    inset: 0;
-    z-index: -5;
-    pointer-events: none;
-    overflow: hidden;
-}
-
-.ambient::before,
-.ambient::after {
-    content: "";
-    position: absolute;
-    width: 500px;
-    height: 500px;
-    border-radius: 50%;
-    filter: blur(110px);
-    opacity: .12;
-}
-
-.ambient::before {
-    background: var(--blue);
-    top: -180px;
-    left: -160px;
-    animation: ambientOne 12s ease-in-out infinite alternate;
-}
-
-.ambient::after {
-    background: var(--purple);
-    right: -170px;
-    bottom: -180px;
-    animation: ambientTwo 15s ease-in-out infinite alternate;
-}
-
-@keyframes ambientOne {
-    from {
-        transform: translate(0, 0);
-    }
-    to {
-        transform: translate(180px, 120px);
-    }
-}
-
-@keyframes ambientTwo {
-    from {
-        transform: translate(0, 0);
-    }
-    to {
-        transform: translate(-140px, -100px);
-    }
-}
-
-.grid-background {
-    position: fixed;
-    inset: 0;
-    z-index: -4;
-    pointer-events: none;
-    opacity: .26;
-
-    background-image:
-        linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
-
-    background-size: 55px 55px;
-
-    mask-image: linear-gradient(
-        to bottom,
-        black,
-        transparent 90%
-    );
-}
-
-
-/* =========================================================
-   LOADER
-========================================================= */
-
-#loader {
-    position: fixed;
-    inset: 0;
-    z-index: 9999;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    background: #030811;
-
-    transition:
-        opacity .7s ease,
-        visibility .7s ease;
-}
-
-#loader.hide {
-    opacity: 0;
-    visibility: hidden;
-}
-
-.loader-content {
-    text-align: center;
-}
-
-.loader-logo {
-    width: 82px;
-    height: 82px;
-
-    margin: 0 auto 24px;
-
-    display: grid;
-    place-items: center;
-
-    border-radius: 24px;
-
-    color: white;
-    font-size: 27px;
-    font-weight: 900;
-
-    background:
-        linear-gradient(
-            135deg,
-            var(--blue),
-            var(--purple)
-        );
-
-    box-shadow:
-        0 0 50px rgba(35,136,255,.35);
-
-    animation: loaderPulse 1.4s ease-in-out infinite alternate;
-}
-
-@keyframes loaderPulse {
-    from {
-        transform: scale(.94);
-    }
-
-    to {
-        transform: scale(1.04);
-    }
-}
-
-.loader-name {
-    color: white;
-    font-size: 18px;
-    font-weight: 800;
-    letter-spacing: .5px;
-}
-
-.loader-text {
-    margin-top: 8px;
-    color: var(--muted);
-    font-size: 12px;
-}
-
-.loader-line {
-    width: 200px;
-    height: 3px;
-    margin: 22px auto 0;
-    border-radius: 100px;
-    overflow: hidden;
-    background: rgba(255,255,255,.08);
-}
-
-.loader-line span {
-    display: block;
-    width: 0%;
-    height: 100%;
-
-    background:
-        linear-gradient(
-            90deg,
-            var(--blue),
-            var(--cyan),
-            var(--purple)
-        );
-
-    animation: loaderProgress 1.5s ease forwards;
-}
-
-@keyframes loaderProgress {
-    from {
-        width: 0%;
-    }
-
-    to {
-        width: 100%;
-    }
-}
-
-
-/* =========================================================
-   NAVBAR
-========================================================= */
-
-.navbar {
-    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 18px 7%;
+    background: rgba(7, 17, 31, 0.95);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
     z-index: 1000;
+}
 
-    top: 18px;
-    left: 50%;
-    transform: translateX(-50%);
-
-    width: min(1180px, calc(100% - 32px));
-
-    padding: 12px 14px;
-
+.nav-container {
+    max-width: 1200px;
+    margin: auto;
     display: flex;
-    align-items: center;
     justify-content: space-between;
-
-    border: 1px solid rgba(255,255,255,.08);
-    background: rgba(6,15,28,.72);
-
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-
-    border-radius: 20px;
-
-    transition: .35s ease;
-}
-
-.navbar.scrolled {
-    background: rgba(5,11,22,.92);
-
-    box-shadow:
-        0 18px 60px rgba(0,0,0,.25);
-
-    border-color: rgba(56,200,255,.10);
-}
-
-.nav-brand {
-    display: flex;
     align-items: center;
-    gap: 11px;
 }
 
-.brand-mark {
-    width: 42px;
-    height: 42px;
-
-    display: grid;
-    place-items: center;
-
-    border-radius: 13px;
-
-    font-size: 14px;
-    font-weight: 900;
-    color: white;
-
-    background:
-        linear-gradient(
-            135deg,
-            var(--blue),
-            var(--purple)
-        );
-
-    box-shadow:
-        0 0 24px rgba(35,136,255,.2);
-}
-
-.brand-text strong {
-    display: block;
-    color: white;
-    font-size: 14px;
-}
-
-.brand-text span {
-    display: block;
-    color: var(--muted);
-    font-size: 9px;
-    margin-top: 2px;
-    letter-spacing: .8px;
-    text-transform: uppercase;
+.logo {
+    font-size: 24px;
+    font-weight: 800;
+    color: #38c8ff;
 }
 
 .nav-links {
     display: flex;
-    align-items: center;
-    gap: 7px;
+    gap: 28px;
+    list-style: none;
 }
 
 .nav-links a {
-    position: relative;
-
-    padding: 11px 13px;
-
-    color: #a8bad1;
-    font-size: 12px;
-    font-weight: 700;
-
-    border-radius: 11px;
-
-    transition: .3s ease;
+    color: #cbd5e1;
+    font-size: 15px;
+    transition: 0.3s;
 }
 
-.nav-links a:hover,
-.nav-links a.active {
-    color: white;
-    background: rgba(35,136,255,.09);
+.nav-links a:hover {
+    color: #38c8ff;
 }
 
-.nav-links a.active::after {
-    content: "";
-
-    position: absolute;
-
-    left: 50%;
-    bottom: 5px;
-
-    width: 4px;
-    height: 4px;
-
-    transform: translateX(-50%);
-
-    border-radius: 50%;
-    background: var(--cyan);
-
-    box-shadow:
-        0 0 10px var(--cyan);
-}
-
-.menu-btn {
-    display: none;
-
-    width: 44px;
-    height: 44px;
-
-    align-items: center;
-    justify-content: center;
-
-    border: 1px solid rgba(255,255,255,.08);
-    border-radius: 13px;
-
-    background: rgba(255,255,255,.04);
-    color: white;
-
-    cursor: pointer;
-}
-
-.menu-btn span,
-.menu-btn span::before,
-.menu-btn span::after {
-    display: block;
-
-    width: 19px;
-    height: 2px;
-
-    border-radius: 5px;
-
-    background: white;
-
-    transition: .3s ease;
-}
-
-.menu-btn span {
-    position: relative;
-}
-
-.menu-btn span::before,
-.menu-btn span::after {
-    content: "";
-    position: absolute;
-    left: 0;
-}
-
-.menu-btn span::before {
-    top: -6px;
-}
-
-.menu-btn span::after {
-    top: 6px;
-}
-
-.menu-btn.open span {
-    background: transparent;
-}
-
-.menu-btn.open span::before {
-    top: 0;
-    transform: rotate(45deg);
-}
-
-.menu-btn.open span::after {
-    top: 0;
-    transform: rotate(-45deg);
-}
-
-
-/* =========================================================
-   HERO
-========================================================= */
+/* HERO */
 
 .hero {
-    position: relative;
-
     min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 120px 7% 70px;
+}
 
-    padding:
-        150px
-        6%
-        90px;
-
-    max-width: 1400px;
+.hero-container {
+    max-width: 1200px;
+    width: 100%;
     margin: auto;
-
     display: grid;
-    grid-template-columns: 1.1fr .9fr;
-    align-items: center;
+    grid-template-columns: 1.2fr 0.8fr;
     gap: 70px;
-}
-
-.hero-content {
-    max-width: 720px;
-}
-
-.hero-status {
-    display: inline-flex;
     align-items: center;
-    gap: 9px;
-
-    padding: 9px 14px;
-
-    border: 1px solid rgba(78,230,168,.18);
-    background: rgba(78,230,168,.06);
-
-    border-radius: 100px;
-
-    color: #a8f0cf;
-
-    font-size: 11px;
-    font-weight: 800;
-    letter-spacing: .9px;
-    text-transform: uppercase;
-
-    margin-bottom: 25px;
 }
 
-.status-dot {
-    width: 7px;
-    height: 7px;
-
-    border-radius: 50%;
-
-    background: var(--green);
-
-    box-shadow:
-        0 0 12px var(--green);
-
-    animation: statusBlink 1.5s infinite;
-}
-
-@keyframes statusBlink {
-    0%, 100% {
-        opacity: 1;
-    }
-
-    50% {
-        opacity: .35;
-    }
+.badge {
+    display: inline-block;
+    padding: 8px 16px;
+    border: 1px solid rgba(56,200,255,0.4);
+    border-radius: 30px;
+    color: #38c8ff;
+    font-size: 14px;
+    margin-bottom: 22px;
 }
 
 .hero h1 {
-    font-size: clamp(48px, 7vw, 90px);
-
-    line-height: .98;
-
-    letter-spacing: -4px;
-
-    color: white;
-}
-
-.hero h1 .gradient {
-    display: block;
-
-    background:
-        linear-gradient(
-            90deg,
-            #ffffff 0%,
-            var(--cyan) 42%,
-            #8f7aff 90%
-        );
-
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-
-    background-size: 200% auto;
-
-    animation: textGradient 7s linear infinite;
-}
-
-@keyframes textGradient {
-    from {
-        background-position: 0% center;
-    }
-
-    to {
-        background-position: 200% center;
-    }
-}
-
-.hero-subtitle {
-    margin-top: 25px;
-
-    font-size: clamp(18px, 2vw, 23px);
-    font-weight: 600;
-
-    color: #b9c8da;
-}
-
-.hero-description {
-    max-width: 650px;
-
-    margin-top: 20px;
-
-    color: var(--muted);
-
-    line-height: 1.85;
-
-    font-size: 15px;
-}
-
-.hero-actions {
-    display: flex;
-    flex-wrap: wrap;
-
-    gap: 12px;
-
-    margin-top: 34px;
-}
-
-.btn {
-    position: relative;
-
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 9px;
-
-    min-height: 50px;
-
-    padding: 0 19px;
-
-    border-radius: 14px;
-
-    font-size: 12px;
-    font-weight: 800;
-
-    overflow: hidden;
-
-    transition: .35s ease;
-}
-
-.btn-primary {
-    color: white;
-
-    background:
-        linear-gradient(
-            135deg,
-            var(--blue),
-            var(--purple)
-        );
-
-    box-shadow:
-        0 12px 35px rgba(35,136,255,.2);
-}
-
-.btn-primary:hover {
-    transform: translateY(-4px);
-    box-shadow:
-        0 18px 45px rgba(35,136,255,.3);
-}
-
-.btn-secondary {
-    color: white;
-
-    border: 1px solid rgba(255,255,255,.1);
-
-    background: rgba(255,255,255,.035);
-}
-
-.btn-secondary:hover {
-    transform: translateY(-4px);
-
-    border-color:
-        rgba(56,200,255,.25);
-
-    background:
-        rgba(35,136,255,.08);
-}
-
-.hero-social {
-    display: flex;
-    gap: 9px;
-
-    margin-top: 28px;
-}
-
-.social {
-    width: 40px;
-    height: 40px;
-
-    display: grid;
-    place-items: center;
-
-    border-radius: 12px;
-
-    border: 1px solid rgba(255,255,255,.07);
-    background: rgba(255,255,255,.025);
-
-    color: #a5b9d1;
-
-    font-size: 13px;
-    font-weight: 800;
-
-    transition: .3s ease;
-}
-
-.social:hover {
-    color: white;
-
-    transform: translateY(-4px);
-
-    border-color:
-        rgba(56,200,255,.25);
-
-    background:
-        rgba(35,136,255,.08);
-
-    box-shadow:
-        0 10px 25px rgba(0,0,0,.2);
-}
-
-
-/* =========================================================
-   HERO VISUAL
-========================================================= */
-
-.hero-visual {
-    position: relative;
-
-    min-height: 540px;
-
-    display: grid;
-    place-items: center;
-}
-
-.hero-orbit {
-    position: absolute;
-
-    width: 390px;
-    height: 390px;
-
-    border-radius: 50%;
-
-    border: 1px solid rgba(56,200,255,.12);
-
-    animation: orbitRotate 18s linear infinite;
-}
-
-.hero-orbit::before {
-    content: "";
-
-    position: absolute;
-
-    top: -5px;
-    left: 50%;
-
-    width: 10px;
-    height: 10px;
-
-    transform: translateX(-50%);
-
-    border-radius: 50%;
-
-    background: var(--cyan);
-
-    box-shadow:
-        0 0 20px var(--cyan);
-}
-
-.hero-orbit.two {
-    width: 470px;
-    height: 470px;
-
-    border-color:
-        rgba(124,92,255,.10);
-
-    animation-duration: 27s;
-    animation-direction: reverse;
-}
-
-.hero-orbit.two::before {
-    background: var(--purple);
-
-    box-shadow:
-        0 0 20px var(--purple);
-
-    top: auto;
-    bottom: -5px;
-}
-
-@keyframes orbitRotate {
-    from {
-        transform: rotate(0deg);
-    }
-
-    to {
-        transform: rotate(360deg);
-    }
-}
-
-.profile-card {
-    position: relative;
-    z-index: 4;
-
-    width: min(330px, 75vw);
-
-    padding: 12px;
-
-    border-radius: 32px;
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(255,255,255,.12),
-            rgba(255,255,255,.025)
-        );
-
-    border: 1px solid rgba(255,255,255,.1);
-
-    box-shadow:
-        0 35px 100px rgba(0,0,0,.45),
-        0 0 60px rgba(35,136,255,.08);
-
-    backdrop-filter: blur(20px);
-
-    animation: cardFloat 5s ease-in-out infinite;
-}
-
-@keyframes cardFloat {
-    0%, 100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-10px);
-    }
-}
-
-.profile-inner {
-    position: relative;
-
-    overflow: hidden;
-
-    border-radius: 24px;
-
-    aspect-ratio: 1 / 1.12;
-
-    background: var(--surface);
-}
-
-.profile-photo {
-    width: 100%;
-    height: 100%;
-
-    display: block;
-
-    object-fit: cover;
-
-    object-position: center;
-
-    transition: transform .7s ease;
-}
-
-.profile-card:hover .profile-photo {
-    transform: scale(1.04);
-}
-
-.profile-overlay {
-    position: absolute;
-    inset: auto 0 0 0;
-
-    padding: 60px 22px 22px;
-
-    background:
-        linear-gradient(
-            to top,
-            rgba(3,8,17,.95),
-            rgba(3,8,17,.55),
-            transparent
-        );
-}
-
-.profile-overlay strong {
-    display: block;
-
-    color: white;
-
-    font-size: 20px;
-}
-
-.profile-overlay span {
-    display: block;
-
-    margin-top: 5px;
-
-    color: #a9bbd2;
-
-    font-size: 11px;
-}
-
-.floating-label {
-    position: absolute;
-    z-index: 8;
-
-    padding: 10px 13px;
-
-    border-radius: 13px;
-
-    color: #d7e6f8;
-
-    font-size: 10px;
-    font-weight: 800;
-
-    background:
-        rgba(8,20,38,.78);
-
-    border: 1px solid rgba(255,255,255,.09);
-
-    backdrop-filter: blur(15px);
-
-    box-shadow:
-        0 15px 45px rgba(0,0,0,.2);
-}
-
-.label-one {
-    left: -10px;
-    top: 24%;
-    animation: floatLabelOne 4.5s ease-in-out infinite;
-}
-
-.label-two {
-    right: -10px;
-    top: 58%;
-    animation: floatLabelTwo 5s ease-in-out infinite;
-}
-
-.label-three {
-    left: 15px;
-    bottom: 10%;
-    animation: floatLabelOne 5.5s ease-in-out infinite;
-}
-
-@keyframes floatLabelOne {
-    0%, 100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-9px);
-    }
-}
-
-@keyframes floatLabelTwo {
-    0%, 100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(9px);
-    }
-}
-
-.scroll-indicator {
-    position: absolute;
-
-    bottom: 28px;
-    left: 50%;
-
-    transform: translateX(-50%);
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
-
-    color: #7288a3;
-
-    font-size: 9px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-}
-
-.scroll-line {
-    width: 1px;
-    height: 35px;
-
-    background:
-        linear-gradient(
-            var(--cyan),
-            transparent
-        );
-
-    animation: scrollMove 1.8s ease-in-out infinite;
-}
-
-@keyframes scrollMove {
-    0%, 100% {
-        transform: translateY(0);
-        opacity: .4;
-    }
-
-    50% {
-        transform: translateY(8px);
-        opacity: 1;
-    }
-}
-
-
-/* =========================================================
-   GENERAL SECTION
-========================================================= */
-
-.section {
-    position: relative;
-
-    padding: 110px 6%;
-
-    max-width: 1400px;
-
-    margin: auto;
-}
-
-.section-heading {
-    max-width: 740px;
-
-    margin-bottom: 60px;
-}
-
-.section-tag {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-
-    padding: 8px 14px;
-
-    border:
-        1px solid rgba(56,200,255,.18);
-
-    background:
-        rgba(35,136,255,.07);
-
-    border-radius: 100px;
-
-    color: var(--cyan);
-
-    font-size: 10px;
-    font-weight: 800;
-
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-
+    font-size: clamp(42px, 6vw, 76px);
+    line-height: 1.05;
     margin-bottom: 18px;
 }
 
-.section-tag::before {
-    content: "";
+.hero h1 span {
+    color: #38c8ff;
+}
 
-    width: 6px;
-    height: 6px;
+.hero h2 {
+    font-size: 24px;
+    color: #cbd5e1;
+    margin-bottom: 20px;
+}
 
-    border-radius: 50%;
+.hero p {
+    max-width: 680px;
+    color: #94a3b8;
+    font-size: 17px;
+    margin-bottom: 30px;
+}
 
-    background: var(--cyan);
+.buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
 
-    box-shadow:
-        0 0 12px var(--cyan);
+.btn {
+    display: inline-block;
+    padding: 13px 24px;
+    border-radius: 10px;
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+.btn-primary {
+    background: #2388ff;
+    color: white;
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    background: #38c8ff;
+}
+
+.btn-secondary {
+    border: 1px solid rgba(255,255,255,0.18);
+    color: white;
+}
+
+.btn-secondary:hover {
+    border-color: #38c8ff;
+    color: #38c8ff;
+}
+
+/* PROFILE */
+
+.profile {
+    display: flex;
+    justify-content: center;
+}
+
+.profile-card {
+    width: 320px;
+    height: 390px;
+    border-radius: 25px;
+    padding: 12px;
+    background: linear-gradient(145deg, #2388ff, #7c5cff);
+    box-shadow: 0 30px 80px rgba(0,0,0,0.5);
+}
+
+.profile-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 18px;
+    display: block;
+}
+
+/* SECTIONS */
+
+section {
+    padding: 100px 7%;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
 }
 
 .section-title {
-    margin: 0;
-
-    font-size: clamp(38px, 5vw, 64px);
-
-    line-height: 1.05;
-
-    letter-spacing: -2.5px;
+    text-align: center;
+    margin-bottom: 55px;
 }
 
 .section-title span {
-    background:
-        linear-gradient(
-            90deg,
-            var(--blue),
-            var(--cyan),
-            var(--purple)
-        );
-
-    -webkit-background-clip: text;
-    background-clip: text;
-
-    color: transparent;
+    color: #38c8ff;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 2px;
 }
 
-.section-description {
-    margin-top: 20px;
-
-    color: var(--muted);
-
-    line-height: 1.85;
-
-    font-size: 15px;
+.section-title h2 {
+    font-size: 40px;
+    margin-top: 8px;
 }
 
+/* CARDS */
 
-/* =========================================================
-   STATS
-========================================================= */
-
-.stats {
-    position: relative;
-    z-index: 5;
-
-    padding: 0 6% 35px;
-
-    max-width: 1250px;
-
-    margin: -30px auto 0;
-}
-
-.stats-container {
+.cards {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-
-    overflow: hidden;
-
-    border-radius: 26px;
-
-    border:
-        1px solid rgba(255,255,255,.08);
-
-    background:
-        rgba(11,23,41,.72);
-
-    backdrop-filter: blur(25px);
-
-    box-shadow:
-        var(--shadow);
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
 }
 
-.stat {
-    position: relative;
+.card {
+    background: #0d1b2e;
+    border: 1px solid rgba(255,255,255,0.08);
+    padding: 30px;
+    border-radius: 18px;
+    transition: 0.3s;
+}
 
-    padding: 34px 20px;
+.card:hover {
+    transform: translateY(-7px);
+    border-color: rgba(56,200,255,0.5);
+}
 
+.card h3 {
+    color: #38c8ff;
+    margin-bottom: 10px;
+}
+
+.card p {
+    color: #94a3b8;
+}
+
+/* ABOUT */
+
+.about {
+    background: #091625;
+}
+
+.about-text {
+    max-width: 850px;
+    margin: auto;
     text-align: center;
-
-    transition: .4s ease;
 }
 
-.stat::after {
-    content: "";
-
-    position: absolute;
-
-    right: 0;
-    top: 25%;
-
-    width: 1px;
-    height: 50%;
-
-    background:
-        rgba(255,255,255,.08);
+.about-text p {
+    color: #a8b5c7;
+    font-size: 18px;
 }
 
-.stat:last-child::after {
-    display: none;
-}
+/* SKILLS */
 
-.stat:hover {
-    background:
-        rgba(35,136,255,.05);
-
-    transform: translateY(-3px);
-}
-
-.stat-number {
-    font-size: clamp(30px, 4vw, 45px);
-
-    font-weight: 900;
-
-    letter-spacing: -2px;
-
-    background:
-        linear-gradient(
-            135deg,
-            white,
-            var(--cyan)
-        );
-
-    -webkit-background-clip: text;
-    background-clip: text;
-
-    color: transparent;
-}
-
-.stat-label {
-    margin-top: 7px;
-
-    color: var(--muted);
-
-    font-size: 11px;
-    font-weight: 700;
-
-    letter-spacing: .4px;
-}
-
-
-/* =========================================================
-   ABOUT
-========================================================= */
-
-.about-grid {
+.skills {
     display: grid;
-
-    grid-template-columns: .85fr 1.15fr;
-
-    gap: 70px;
-
-    align-items: center;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
 }
 
-.about-card {
-    position: relative;
+.skill {
+    background: #0d1b2e;
+    padding: 25px;
+    border-radius: 16px;
+}
 
-    min-height: 470px;
+.skill-top {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
 
-    padding: 35px;
+.skill-top span:last-child {
+    color: #38c8ff;
+}
 
+.bar {
+    width: 100%;
+    height: 8px;
+    background: #17263a;
+    border-radius: 10px;
     overflow: hidden;
-
-    border-radius: 34px;
-
-    background:
-        radial-gradient(
-            circle at 15% 15%,
-            rgba(35,136,255,.18),
-            transparent 35%
-        ),
-        radial-gradient(
-            circle at 90% 85%,
-            rgba(124,92,255,.18),
-            transparent 35%
-        ),
-        rgba(11,23,41,.72);
-
-    border:
-        1px solid rgba(255,255,255,.08);
-
-    box-shadow:
-        var(--shadow);
-
-    backdrop-filter: blur(20px);
 }
 
-.about-card::before {
-    content: "";
-
-    position: absolute;
-
-    width: 250px;
-    height: 250px;
-
-    right: -100px;
-    top: -110px;
-
-    border-radius: 50%;
-
-    border:
-        1px solid rgba(56,200,255,.10);
+.bar div {
+    height: 100%;
+    background: linear-gradient(90deg, #2388ff, #38c8ff);
+    border-radius: 10px;
 }
 
-.about-card::after {
-    content: "";
+/* CONTACT */
 
-    position: absolute;
-
-    width: 170px;
-    height: 170px;
-
-    left: -80px;
-    bottom: -70px;
-
-    border-radius: 50%;
-
-    border:
-        1px solid rgba(124,92,255,.10);
+.contact {
+    text-align: center;
 }
 
-.about-code {
-    position: relative;
+.contact-box {
+    max-width: 750px;
+    margin: auto;
+    background: #0d1b2e;
+    padding: 50px 30px;
+    border-radius: 25px;
+    border: 1px solid rgba(255,255,255,0.08);
+}
+
+.contact-box p {
+    color: #94a3b8;
+    margin: 15px 0 30px;
+}
+
+.email {
+    display: inline-block;
+    color: #38c8ff;
+    font-size: 18px;
+    margin-bottom: 25px;
+}
+
+/* FOOTER */
+
+footer {
+    text-align: center;
+    padding: 30px;
+    color: #64748b;
+    border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+/* MOBILE */
+
+@media (max-width: 800px) {
+
+    .nav-links {
+        display: none;
+    }
+
+    .hero {
+        padding-top: 130px;
+    }
+
+    .hero-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .hero p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .buttons {
+        justify-content: center;
+    }
+
+    .profile {
+        margin-top: 20px;
+    }
+
+    .cards,
+    .skills {
+        grid-template-columns: 1fr;
+    }
+
+    .profile-card {
+        width: 280px;
+        height: 340px;
+    }
+
+    section {
+        padding: 75px 6%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+
+<nav>
+    <div class="nav-container">
+        <div class="logo">AR</div>
+
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+
+    <div class="hero-container">
+
+        <div>
+
+            <div class="badge">
+                Open to meaningful opportunities
+            </div>
+
+            <h1>
+                Hi, I'm <span>Aneeb Raza.</span>
+            </h1>
+
+            <h2>
+                Educator • Principal • Technology Professional
+            </h2>
+
+            <p>
+                I combine education leadership, Computer Science,
+                technology and digital systems to create better
+                learning environments and meaningful digital solutions.
+            </p>
+
+            <div class="buttons">
+
+                <a href="#experience" class="btn btn-primary">
+                    Explore My Work
+                </a>
+
+                <a href="#contact" class="btn btn-secondary">
+                    Let's Connect
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="profile">
+
+            <div class="profile-card">
+
+                <img
+                    src="Anibraza.jpg"
+                    alt="Aneeb Raza"
+                >
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section class="about" id="about">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <span>ABOUT ME</span>
+
+            <h2>Technology With A Purpose</h2>
+
+        </div>
+
+        <div class="about-text">
+
+            <p>
+                I am Aneeb Raza, an education leader and Computer Science
+                professional with a passion for technology, teaching,
+                leadership and digital transformation.
+            </p>
+
+            <br>
+
+            <p>
+                My experience combines academic management, Computer
+                Science education, web development, educational technology,
+                digital systems and emerging AI tools.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- EXPERIENCE -->
+
+<section id="experience">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <span>EXPERIENCE</span>
+
+            <h2>Professional Journey</h2>
+
+        </div>
+
+
+        <div class="cards">
+
+            <div class="card">
+
+                <h3>Principal</h3>
+
+                <p>
+                    Iqra Madina Tul Atfal High School
+                </p>
+
+                <br>
+
+                <p>
+                    Leading academic operations, teachers,
+                    student discipline, educational planning
+                    and technology-based school systems.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>Computer Science Educator</h3>
+
+                <p>
+                    O-Level / IGCSE Computer Science
+                </p>
+
+                <br>
+
+                <p>
+                    Teaching programming, computational thinking,
+                    problem solving and Computer Science concepts.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>Education Head & Teacher</h3>
+
+                <p>
+                    4+ Years Academic Experience
+                </p>
+
+                <br>
+
+                <p>
+                    Experience in academic management,
+                    lesson planning, teacher coordination
+                    and classroom development.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>Technology & Digital Systems</h3>
+
+                <p>
+                    Web • Automation • Educational Technology
+                </p>
+
+                <br>
+
+                <p>
+                    Building practical digital solutions for
+                    education, management and productivity.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- EXPERTISE -->
+
+<section class="about">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <span>EXPERTISE</span>
+
+            <h2>What I Do</h2>
+
+        </div>
+
+
+        <div class="cards">
+
+            <div class="card">
+                <h3>Academic Leadership</h3>
+                <p>
+                    School leadership, academic planning,
+                    teacher management and student development.
+                </p>
+            </div>
+
+
+            <div class="card">
+                <h3>Computer Science</h3>
+                <p>
+                    Programming, computational thinking,
+                    algorithms and O-Level / IGCSE Computer Science.
+                </p>
+            </div>
+
+
+            <div class="card">
+                <h3>Web Development</h3>
+                <p>
+                    Modern websites and responsive digital
+                    experiences using HTML, CSS and JavaScript.
+                </p>
+            </div>
+
+
+            <div class="card">
+                <h3>AI & Automation</h3>
+                <p>
+                    Exploring practical AI systems, automation
+                    and intelligent digital workflows.
+                </p>
+            </div>
+
+
+            <div class="card">
+                <h3>Digital Systems</h3>
+                <p>
+                    Technology-based systems for education,
+                    management and productivity.
+                </p>
+            </div>
+
+
+            <div class="card">
+                <h3>Problem Solving</h3>
+                <p>
+                    Turning real-world problems into practical
+                    technology-driven solutions.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- SKILLS -->
+
+<section id="skills">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <span>SKILLS</span>
+
+            <h2>Technical & Professional Skills</h2>
+
+        </div>
+
+
+        <div class="skills">
+
+            <div class="skill">
+
+                <div class="skill-top">
+                    <span>HTML / CSS</span>
+                    <span>90%</span>
+                </div>
+
+                <div class="bar">
+                    <div style="width:90%;"></div>
+                </div>
+
+            </div>
+
+
+            <div class="skill">
+
+                <div class="skill-top">
+                    <span>JavaScript</span>
+                    <span>75%</span>
+                </div>
+
+                <div class="bar">
+                    <div style="width:75%;"></div>
+                </div>
+
+            </div>
+
+
+            <div class="skill">
+
+                <div class="skill-top">
+                    <span>Computer Science</span>
+                    <span>90%</span>
+                </div>
+
+                <div class="bar">
+                    <div style="width:90%;"></div>
+                </div>
+
+            </div>
+
+
+            <div class="skill">
+
+                <div class="skill-top">
+                    <span>Educational Technology</span>
+                    <span>92%</span>
+                </div>
+
+                <div class="bar">
+                    <div style="width:92%;"></div>
+                </div>
+
+            </div>
+
+
+            <div class="skill">
+
+                <div class="skill-top">
+                    <span>Leadership & Management</span>
+                    <span>90%</span>
+                </div>
+
+                <div class="bar">
+                    <div style="width:90%;"></div>
+                </div>
+
+            </div>
+
+
+            <div class="skill">
+
+                <div class="skill-top">
+                    <span>Digital Systems</span>
+                    <span>85%</span>
+                </div>
+
+                <div class="bar">
+                    <div style="width:85%;"></div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section class="about" id="contact">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <span>CONTACT</span>
+
+            <h2>Let's Build Something Meaningful</h2>
+
+        </div>
+
+
+        <div class="contact-box">
+
+            <p>
+                Interested in education, Computer Science,
+                technology or digital collaboration?
+            </p>
+
+            <a
+                class="email"
+                href="mailto:aneebtech1@gmail.com"
+            >
+                aneebtech1@gmail.com
+            </a>
+
+            <br>
+
+            <a
+                class="btn btn-primary"
+                href="mailto:aneebtech1@gmail.com"
+            >
+                Contact Me
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    © <span id="year"></span> Aneeb Raza.
+    All Rights Reserved.
+
+</footer>
+
+
+<script>
+
+document.getElementById("year").textContent =
+    new Date().getFullYear();
+
+</script>
+
+</body>
+</html>
